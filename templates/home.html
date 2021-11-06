@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block body%}
+
+<div class="text-center "><u><h4>Recodrs</h4></u></div>
+<div class="container my-4">
+<table class="table">
+    <thead>
+      <tr>
+        
+        <th scope="col">Task Name</th>
+        <th scope="col">Deadline</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for Record in record%}
+      <tr>
+        
+        <td>{{Record.taskName}}</td>
+        <td>{{Record.deadline}}</td>
+        <td>
+          <a href="/edit/{{ Record.id }}">Update</a>
+          <a href="/erase/{{ Record.id }}">Erase</a>
+        </td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+  {%endblock%}

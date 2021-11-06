@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+{%block body%}
+<div class="container my-3">
+  <form action='/update/{{record.id}}' method='POST'>
+    {%csrf_token%}
+    
+    <div class="mb-3">
+      <label for="taskName">Task Name</label>
+      
+      <input type="text" class="form-control" id="taskName" name="taskName" value="{{record.taskName}}">
+      
+    </div>
+    
+    <div class="mb-3">
+      <label for="deadline">Deadline</label>
+      
+      <input type="text" class="form-control" name='deadline' id="deadline" value="{{record.deadline}}">
+      
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{%endblock%}
